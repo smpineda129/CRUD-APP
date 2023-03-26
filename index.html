@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Empleados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Empleados</h1>
+    <div id="container">
+        <form id="form">
+            <h2>Añadir un empleado</h2> <input type="text" id="nombre" placeholder="Nombre"> <input type="text"
+                id="apellido" placeholder="Apellido"> <input type="text" id="edad" placeholder="Edad"> <button
+                type="submit" id="submit-btn">Guardar</button> <button type="button" id="cancel-btn">Cancelar</button>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Edad</th>
+                    <th class="Acciones-title">Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="table-body"> </tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
