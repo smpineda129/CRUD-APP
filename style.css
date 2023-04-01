@@ -189,28 +189,12 @@ button#cancel-btn:hover {
 
 @media only screen and (max-width: 576px) {
 
-  button[type="submit"], button[type="button"] {
-    background-color: #302174;
-    color: rgb(180, 3, 3);
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 10px;
-  }
-
   .menu-logo-container{
       display: block;
   }
 
   img.menu-logo {
       width: 40px;
-  }
-
-  footer{
-      position: absolute;
-      bottom: 0;
-      width: 100%;
   }
   
   
