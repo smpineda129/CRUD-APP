@@ -157,10 +157,6 @@ button#cancel-btn:hover {
   width: 290px;
 }
 
-.menu-logo-container{
-  display: none;
-}
-
 .social-container {
   display: flex;
   flex-direction: column;
@@ -189,9 +185,6 @@ button#cancel-btn:hover {
 
 @media only screen and (max-width: 576px) {
 
-  .menu-logo-container{
-      display: block;
-  }
 
   img.menu-logo {
       width: 40px;
