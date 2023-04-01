@@ -189,16 +189,6 @@ button#cancel-btn:hover {
 
 @media only screen and (max-width: 576px) {
 
-  button[type="submit"], button[type="button"] {
-    background-color: #302174;
-    color: rgb(180, 3, 3);
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 10px;
-  }
-
   .menu-logo-container{
       display: block;
   }
@@ -207,17 +197,37 @@ button#cancel-btn:hover {
       width: 40px;
   }
 
-  footer{
-      position: absolute;
-      bottom: 0;
-      width: 100%;
+  .edad-title{
+    display: none;
   }
   
+  .edad-column{
+    display: none;
+  }
   
+  .table-container{
+    margin: 0 10px 50px 10px !important;
+    width: 85% !important;
+  }
+
+  th,td{
+    font-size: 14px;
+  }
+
+  button.btn-edit {
+    margin-bottom: 5px;
+}
+
+.social-icons > img {
+  width: 35px;
+}
+
   .footer {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      padding: 45px !important;
+      height: 180px;
   }
   
   .footer > div {
@@ -229,6 +239,11 @@ button#cancel-btn:hover {
   }
 
   .social-container {
-      margin-bottom: 15px;
+    width: 170px;
+    margin-bottom: 15px;
   }
+
+  .logo-inferior {
+    width: 240px;
+}
 }
