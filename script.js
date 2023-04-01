@@ -85,6 +85,7 @@ class Registro {
         tdNombre.textContent = registro.nombre;
         tdApellido.textContent = registro.apellido;
         tdEdad.textContent = registro.edad;
+        tdEdad.classList.add("edad-column")
         tdCargo.textContent = registro.cargo;
         editarBtn.textContent = 'Editar';
         editarBtn.classList.add("btn-edit")

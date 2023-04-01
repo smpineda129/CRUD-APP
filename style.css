@@ -196,12 +196,38 @@ button#cancel-btn:hover {
   img.menu-logo {
       width: 40px;
   }
+
+  .edad-title{
+    display: none;
+  }
   
+  .edad-column{
+    display: none;
+  }
   
+  .table-container{
+    margin: 0 10px 50px 10px !important;
+    width: 85% !important;
+  }
+
+  th,td{
+    font-size: 14px;
+  }
+
+  button.btn-edit {
+    margin-bottom: 5px;
+}
+
+.social-icons > img {
+  width: 35px;
+}
+
   .footer {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      padding: 45px !important;
+      height: 180px;
   }
   
   .footer > div {
@@ -213,6 +239,11 @@ button#cancel-btn:hover {
   }
 
   .social-container {
-      margin-bottom: 15px;
+    width: 170px;
+    margin-bottom: 15px;
   }
+
+  .logo-inferior {
+    width: 240px;
+}
 }
