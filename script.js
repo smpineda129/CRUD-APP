@@ -1,8 +1,9 @@
 class Registro {
-    constructor(nombre, apellido, edad) {
+    constructor(nombre, apellido, edad, cargo) {
       this.nombre = nombre;
       this.apellido = apellido;
       this.edad = edad;
+      this.cargo = cargo;
     }
   }
   
@@ -12,6 +13,7 @@ class Registro {
       this.nombreInput = document.getElementById('nombre');
       this.apellidoInput = document.getElementById('apellido');
       this.edadInput = document.getElementById('edad');
+      this.cargoInput = document.getElementById("cargo");
       this.submitBtn = document.getElementById('submit-btn');
       this.cancelBtn = document.getElementById('cancel-btn');
       this.tableBody = document.getElementById('table-body');
@@ -24,6 +26,10 @@ class Registro {
         this.registros = registrosGuardados;
         this.mostrarRegistros();
       }
+
+      // Mostrar el numerod e empleados
+      const NumeroEmpleados = document.getElementById("numero-empleados")
+      NumeroEmpleados.innerText = "El numero de empleados es: " + this.registros.length;
   
       this.submitBtn.addEventListener('click', this.agregarRegistro.bind(this));
       this.cancelBtn.addEventListener('click', this.cancelarRegistro.bind(this));
@@ -34,7 +40,8 @@ class Registro {
       const nombre = this.nombreInput.value;
       const apellido = this.apellidoInput.value;
       const edad = this.edadInput.value;
-      if (!nombre || !apellido || !edad) {
+      const cargo = this.cargoInput.options[this.cargoInput.selectedIndex].value;
+      if (!nombre || !apellido || !edad || !cargo) {
         alert('Por favor completa todos los campos');
         return;
       }
@@ -43,20 +50,26 @@ class Registro {
         this.registros[this.registroIndex] = {
           nombre: nombre,
           apellido: apellido,
-          edad: edad
+          edad: edad,
+          cargo: cargo
         };
         this.registroIndex = null;
       } else {
         // Agregar nuevo registro
-        const registro = new Registro(nombre, apellido, edad);
+        const registro = new Registro(nombre, apellido, edad, cargo);
         this.registros.push(registro);
       }
       this.form.reset();
       this.mostrarRegistros();
-  
+    
+      // Actualizar número de empleados
+      const NumeroEmpleados = document.getElementById("numero-empleados")
+      NumeroEmpleados.innerText = "El numero de empleados es: " + this.registros.length;
+    
       // Guardar registros en localStorage
       localStorage.setItem('registros', JSON.stringify(this.registros));
     }
+    
   
     mostrarRegistros() {
       this.tableBody.innerHTML = '';
@@ -65,12 +78,14 @@ class Registro {
         const tdNombre = document.createElement('td');
         const tdApellido = document.createElement('td');
         const tdEdad = document.createElement('td');
+        const tdCargo = document.createElement("td");
         const tdAcciones = document.createElement('td');  
         const editarBtn = document.createElement('button');
         const eliminarBtn = document.createElement('button');
         tdNombre.textContent = registro.nombre;
         tdApellido.textContent = registro.apellido;
         tdEdad.textContent = registro.edad;
+        tdCargo.textContent = registro.cargo;
         editarBtn.textContent = 'Editar';
         editarBtn.classList.add("btn-edit")
         editarBtn.addEventListener('click', () => {
@@ -85,6 +100,7 @@ class Registro {
         tr.appendChild(tdNombre);
         tr.appendChild(tdApellido);
         tr.appendChild(tdEdad);
+        tr.appendChild(tdCargo);
         tr.appendChild(tdAcciones);
         this.tableBody.appendChild(tr);
       });
@@ -95,14 +111,21 @@ class Registro {
       this.nombreInput.value = registro.nombre;
       this.apellidoInput.value = registro.apellido;
       this.edadInput.value = registro.edad;
+      this.cargoInput.value = registro.cargo;
       this.registroIndex = index;
     }
   
     eliminarRegistro(index) {
       this.registros.splice(index, 1);
+    
+      // Actualizar número de empleados
+      const NumeroEmpleados = document.getElementById("numero-empleados")
+      NumeroEmpleados.innerText = "El numero de empleados es: " + this.registros.length;
+    
       localStorage.setItem('registros', JSON.stringify(this.registros));
       this.mostrarRegistros();
     }
+    
   
     cancelarRegistro() {
       this.form.reset();
@@ -111,4 +134,8 @@ class Registro {
   }
   
   const crud = new Crud();
+
+
+
+
   
